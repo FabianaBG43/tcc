@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Déia Delicias- Confeitaria Artesanal</title>
+    <b></b>
+    <link rel="stylesheet" href="./css/estilo.css">
+
+<body>
+
+    <form>
+    <label>Nome</label>
+    <input type="text" required>
+
+    <label>WhatsApp</label>
+    <input type="tel" required>
+
+    <label>Produto</label>
+    <select>
+        <option>Bolos decorados</option>
+        <option>Bolos de Pote</option>
+        <option>Empadão</option>
+    </select>
+
+    <label>Quantidade</label>
+    <input type="number" min="1" value="1">
+
+    <label>Detalhes</label>
+    <textarea></textarea>
+
+    <button type="submit">Enviar Pedido</button>
+</form>
+<script>
+function enviarWhatsApp(event) {
+    event.preventDefault();
+
+    // Pegando os valores do formulário
+    const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
+    const produto = document.getElementById("produto").value;
+    const quantidade = document.getElementById("quantidade").value;
+    const detalhes = document.getElementById("detalhes").value;
+
+    // Montando a mensagem
+    const mensagem =
+        `Olá! Gostaria de fazer um pedido:\n\n` +
+        `Nome: ${nome}\n` +
+        `WhatsApp: ${telefone}\n` +
+        `Produto: ${produto}\n` +
+        `Quantidade: ${quantidade}\n` +
+        `Detalhes: ${detalhes}`;
+
+    // Número da doceira (trocar pelo seu)
+    const numero = "5511973126001";
+
+    // Abrindo WhatsApp
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank");
+}
+<form onsubmit="enviarWhatsApp(event)">
+
+<label>Nome</label>
+<input id="nome" type="text" required>
+
+<label>WhatsApp</label>
+<input id="telefone" type="tel" required>
+
+<label>Produto</label>
+<select id="produto">
+    <option>Brigadeiro Gourmet</option>
+    <option>Cupcake</option>
+    <option>Bolo Personalizado</option>
+</select>
+
+<label>Quantidade</label>
+<input id="quantidade" type="number" min="1" value="1">
+
+<label>Detalhes</label>
+<textarea id="detalhes"></textarea>
+</script>
+    
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+<header>
+    <div class="logo">🍰 Déia Delicias Artesanais</div>
+    <p></p>
+    <div class="slogan">💕Confeitaria artesanal feita com amor</div>
+    <button>Bolos decorados</button>
+
+</header>
+
+<!-- ================= BANNER PRINCIPAL ================= -->
+<section class="banner">
+    Doces que encantam em cada detalhe
+    <p></p>
+    <img src="./img/1000083160.jpg" alt="Bolo decorado">
+
+</section>
+
+<!-- ================= PRODUTOS ================= -->
+<section class="produtos">
+    <h2>Nossos Deliciosos Doces e salgados</h2>
+
+    <div class="grid">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="./img/1000083107.jpg" alt="Bolos de pote">
+            <h3>Bolos de pote</h3>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="./img/1000083108.jpg" alt="Sobremesa na Taça">
+            <h3>Sobremesa na Taça</h3>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="./img/1000083109.jpg" alt="Empadão">
+            <h3>Empadão</h3>
+        </div>
+
+
+</section>
+
+<!-- ================= RODAPÉ ================= -->
+<footer>
+    <a href="http://wa.me"></a>
+
+    © 2026 Déia Delicias Artesanais | Encomendas pelo WhatsApp 11-97312-6001
+</footer>
